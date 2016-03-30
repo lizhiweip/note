@@ -8,18 +8,14 @@
 
 笔记内容主要是mybatis和springmvc的一些基本概念和使用方法，涉及概念介绍、环境搭建、编程细节、运行调试等方面。
 
-这套笔记整体偏入门和应用，适合快速上手，对底层实现和机理并未做过多分析。
+这套笔记整体偏入门和应用，适合快速上手，对底层实现和机理并未做过多分析。我后续会研读spring源码，并把学习的收获写成博客分享出来，根据情况再开一个仓库或者贴博客链接。
 
-我后续会研读spring源码，并把学习的收获写成博客分享出来，根据情况再开一个仓库或者贴博客链接。
-
-**如果觉得不错，请先在这个仓库上点个star吧**，这也是对我的肯定和鼓励，谢谢了。
-
-不定时进行调整和补充，需要关注更新的请 Watch、Star、Fork
+**如果觉得不错，请先在这个仓库上点个star吧**，这也是对我的肯定和鼓励，谢谢了。不定时进行调整和补充，需要关注更新的请 Watch、Star、Fork
 
 如果你只是单纯要阅读的话，建议移步CSDN或者oschina上观看，访问速度快很多：
 
->* CSDN:[我的java&javaweb学习笔记(汇总)](http://blog.csdn.net/h3243212/article/details/50659471)
->* oschina:[我的java&javaweb学习笔记(汇总)](http://my.oschina.net/brianway/blog/614355)
+>* CSDN:[springmvc+mybatis学习笔记(汇总)](http://blog.csdn.net/h3243212/article/details/51016271)
+>* oschina:[springmvc+mybatis学习笔记(汇总)](http://my.oschina.net/brianway/blog/649946)
 
 
 -----
