@@ -65,7 +65,27 @@
     - [springmvc学习笔记(20)-拦截器.md](/springmvc/springmvc学习笔记(20)-拦截器.md)
     - [springmvc学习笔记(21)-springmvc整合mybatis遇到的问题及解决小结.md](/springmvc/springmvc学习笔记(21)-springmvc整合mybatis遇到的问题及解决小结.md)
     - [springmvc学习笔记(22)-springmvc开发小结.md](/springmvc/springmvc学习笔记(22)-springmvc开发小结.md)
+
+	
 -----
+
+
+# sourcecode说明
+
+该文件下是涉及到的源码，其中mybatis部分都是直接新建的web工程，springmvc部分都是使用maven构建的。
+
+我使用的IDE是intellij IDEA 15.0.2,以下每个子文件夹对应一个project。
+
+- [mybatis](https://github.com/brianway/springmvc-mybatis-learning/tree/master/sourcecode/mybatis):mybatis部分前16篇笔记用到的源码
+- [mybatis-spring](https://github.com/brianway/springmvc-mybatis-learning/tree/master/sourcecode/mybatis-spring):mybatis部分笔记(17)对应的源码
+- [mybatis-generator](https://github.com/brianway/springmvc-mybatis-learning/tree/master/sourcecode/mybatis-generator):逆向工程的源码
+- [springmvcfirst](https://github.com/brianway/springmvc-mybatis-learning/tree/master/sourcecode/springmvcfirst):springmvc部分前两篇笔记对应的非注解方式配置的源码
+- [springmvcsecond](https://github.com/brianway/springmvc-mybatis-learning/tree/master/sourcecode/springmvcsecond):springmvc部分前几篇笔记对应的注解方式配置的源码
+- [**learnssm-firstssm**](https://github.com/brianway/springmvc-mybatis-learning/tree/master/sourcecode/learnssm-firstssm):核心代码，springmvc和mybatis整合部分的笔记几乎所有的源码
+
+
+-----
+
 
 # 联系作者
 
