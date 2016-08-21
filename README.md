@@ -1,26 +1,28 @@
-# 我的springmvc+mybatis学习笔记
+# 我的 springmvc + mybatis 学习笔记
 
-笔记分为两大部分：mybatis和springmvc
+笔记分为两大部分: mybatis 和 springmvc
 
 - [mybatis](/mybatis)
 - [springmvc](/springmvc)
 
 
-笔记内容主要是mybatis和springmvc的一些基本概念和使用方法，涉及概念介绍、环境搭建、编程细节、运行调试等方面。
+笔记内容主要是 mybatis 和 springmvc 的一些基本概念和使用方法，涉及概念介绍、环境搭建、编程细节、运行调试等方面。
 
-这套笔记整体偏入门和应用，适合快速上手，对底层实现和机理并未做过多分析。我后续会研读spring源码，并把学习的收获写成博客分享出来，根据情况再开一个仓库或者贴博客链接。
+这套笔记整体偏入门和应用，适合快速上手，对底层实现和机理并未做过多分析。关于 spring 源码的学习笔记,可以参考我的另一个仓库[spring-learning](https://github.com/brianway/spring-learning)
+
 
 **如果觉得不错，请先在这个仓库上点个star吧**，这也是对我的肯定和鼓励，谢谢了。不定时进行调整和补充，需要关注更新的请 Watch、Star、Fork
 
-如果你只是单纯要阅读的话，建议移步CSDN或者oschina上观看，访问速度快很多：
+如果你只是单纯要阅读的话，建议移步 CSDN 或者 oschina 上观看，访问速度快很多：
 
 >* CSDN:[springmvc+mybatis学习笔记(汇总)](http://blog.csdn.net/h3243212/article/details/51016271)
 >* oschina:[springmvc+mybatis学习笔记(汇总)](http://my.oschina.net/brianway/blog/649946)
 
 
+
 -----
 
-# 目录
+## 目录
 
   - [mybatis](/mybatis)
     - [mybatis学习笔记(1)-对原生jdbc程序中的问题总结.md](/mybatis/mybatis学习笔记(1)-对原生jdbc程序中的问题总结.md)
@@ -69,30 +71,65 @@
 	
 -----
 
+## 安装和使用
 
-# sourcecode说明
+环境准备:
 
-该文件下是涉及到的源码，其中mybatis部分都是直接新建的web工程，springmvc部分都是使用maven构建的。
+- jdk 1.8+
+- intellij IDEA 15.0.2+
+- mysql 5.1+
+- maven 3.3+
+- tomcat 8+
 
-我使用的IDE是intellij IDEA 15.0.2,以下每个子文件夹对应一个project。
 
-- [mybatis](https://github.com/brianway/springmvc-mybatis-learning/tree/master/sourcecode/mybatis):mybatis部分前16篇笔记用到的源码
-- [mybatis-spring](https://github.com/brianway/springmvc-mybatis-learning/tree/master/sourcecode/mybatis-spring):mybatis部分笔记(17)对应的源码
-- [mybatis-generator](https://github.com/brianway/springmvc-mybatis-learning/tree/master/sourcecode/mybatis-generator):逆向工程的源码
-- [springmvcfirst](https://github.com/brianway/springmvc-mybatis-learning/tree/master/sourcecode/springmvcfirst):springmvc部分前两篇笔记对应的非注解方式配置的源码
-- [springmvcsecond](https://github.com/brianway/springmvc-mybatis-learning/tree/master/sourcecode/springmvcsecond):springmvc部分前几篇笔记对应的注解方式配置的源码
-- [**learnssm-firstssm**](https://github.com/brianway/springmvc-mybatis-learning/tree/master/sourcecode/learnssm-firstssm):核心代码，springmvc和mybatis整合部分的笔记几乎所有的源码
+数据库导入:
+
+- 新建一个数据库,项目中默认的数据库名为 `mybatis001`
+- 导入 [sourcecode/sql](/sourcecode/sql) 中的 [create.sql](/sourcecode/sql/create.sql) 创建数据表
+- 导入 [sourcecode/sql](/sourcecode/sql) 中的 [data.sql](/sourcecode/sql/data.sql) 添加测试数据
+
+
+在IDE中添加 tomcat 容器:
+
+- ToolBar -> 运行按钮旁边的下拉 -> "Edit Configurations" -> "+" -> "Tomcat Server" 选 local,[如图所示](http://7xph6d.com1.z0.glb.clouddn.com/IDEA_web-%E6%B7%BB%E5%8A%A0tomcat-01.png)
+- 如果是第一次添加,还需要配置 tomcat 的路径,[如图所示](http://7xph6d.com1.z0.glb.clouddn.com/IDEA_web-%E6%B7%BB%E5%8A%A0tomcat-02.png)
+
+
+
+源码导入:
+
+- 将 sourcecode 中的任意子文件夹拷贝出来作为项目根目录,打开即可
+- 每个子文件夹的项目请参考 [sourcecode 说明](#sourcecode说明)
+
+
+
+
+-----
+
+## sourcecode 说明
+
+该文件夹下是涉及到的源码，其中 mybatis 部分都是直接新建的 web 工程，springmvc 部分都是使用 maven 构建的。
+
+我使用的 IDE 是 intellij IDEA 15.0.2,以下每个子文件夹对应一个 project。
+
+- [mybatis](/sourcecode/mybatis):mybatis 部分前 16 篇笔记用到的源码
+- [mybatis-spring](/sourcecode/mybatis-spring):mybatis 部分笔记(17)对应的源码
+- [mybatis-generator](/sourcecode/mybatis-generator):逆向工程的源码
+- [springmvcfirst](/sourcecode/springmvcfirst):springmvc 部分前两篇笔记对应的非注解方式配置的源码
+- [springmvcsecond](/sourcecode/springmvcsecond):springmvc 部分前几篇笔记对应的注解方式配置的源码
+- [**learnssm-firstssm**](/sourcecode/learnssm-firstssm):**核心代码**,springmvc 和 mybatis 整合部分的笔记几乎所有的源码
 
 
 -----
 
 
-# 联系作者
+## 联系作者
 
 - [Brian's Personal Website](http://brianway.github.io/)
-- [oschina](http://my.oschina.net/brianway)
 - [CSDN](http://blog.csdn.net/h3243212/)
+- [oschina](http://my.oschina.net/brianway)
 
+Email: weichuyang@163.com
 
 -----
 
