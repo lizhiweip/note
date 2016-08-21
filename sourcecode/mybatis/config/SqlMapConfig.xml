@@ -38,13 +38,13 @@
     <environments default="development">
         <environment id="development">
             <!-- 使用jdbc事务管理，事务控制由mybatis-->
-            <transactionManager type="JDBC" />
+            <transactionManager type="JDBC"/>
             <!-- 数据库连接池,由mybatis管理-->
             <dataSource type="POOLED">
-                <property name="driver" value="${jdbc.driver}" />
-                <property name="url" value="${jdbc.url}" />
-                <property name="username" value="${jdbc.username}" />
-                <property name="password" value="${jdbc.password}" />
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
             </dataSource>
         </environment>
     </environments>
@@ -70,5 +70,5 @@
          -->
         <package name="com.iot.mybatis.mapper"/>
 
-     </mappers>
- </configuration>
+    </mappers>
+</configuration>

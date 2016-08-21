@@ -1,8 +1,6 @@
 package com.iot.learnssm.firstssm.controller;
 
-
 import com.iot.learnssm.firstssm.controller.converter.validation.ValidGroup1;
-import com.iot.learnssm.firstssm.exception.CustomException;
 import com.iot.learnssm.firstssm.po.ItemsCustom;
 import com.iot.learnssm.firstssm.po.ItemsQueryVo;
 import com.iot.learnssm.firstssm.service.ItemsService;
@@ -16,12 +14,12 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * Created by brian on 2016/3/2.
@@ -53,7 +51,7 @@ public class ItemsController {
     @RequestMapping("/queryItems")
     //实现 对queryItems方法和url进行映射，一个方法对应一个url
     //一般建议将url和方法写成一样
-    public ModelAndView queryItems(HttpServletRequest request, ItemsQueryVo itemsQueryVo) throws Exception{
+    public ModelAndView queryItems(HttpServletRequest request, ItemsQueryVo itemsQueryVo) throws Exception {
         //测试forward后request是否可以共享
         //System.out.println(request.getParameter("id"));
 
@@ -63,7 +61,7 @@ public class ItemsController {
         //返回ModelAndView
         ModelAndView modelAndView = new ModelAndView();
         //相当于request的setAttribute方法,在jsp页面中通过itemsList取数据
-        modelAndView.addObject("itemsList",itemsList);
+        modelAndView.addObject("itemsList", itemsList);
 
         //指定视图
         //下边的路径，如果在视图解析器中配置jsp的路径前缀和后缀，修改为items/itemsList
@@ -73,7 +71,6 @@ public class ItemsController {
 
         return modelAndView;
     }
-
 
     //商品信息修改页面显示
     //@RequestMapping("/editItems")
@@ -96,18 +93,18 @@ public class ItemsController {
 		return modelAndView;
     }*/
 
-    @RequestMapping(value="/editItems",method={RequestMethod.POST,RequestMethod.GET})
+    @RequestMapping(value = "/editItems", method = {RequestMethod.POST, RequestMethod.GET})
     //@RequestParam里边指定request传入参数名称和形参进行绑定。
     //通过required属性指定参数是否必须要传入
     //通过defaultValue可以设置默认值，如果id参数没有传入，将默认值和形参绑定。
-    public String editItems(Model model,@RequestParam(value="id",required=true) Integer items_id)throws Exception {
+    public String editItems(Model model, @RequestParam(value = "id", required = true) Integer items_id) throws Exception {
 
         //调用service根据商品id查询商品信息
         ItemsCustom itemsCustom = itemsService.findItemsById(items_id);
 
         //判断商品是否为空，根据id没有查询到商品，抛出异常，提示用户商品信息不存在
         //if(itemsCustom == null){
-			//throw new CustomException("修改的商品信息不存在!");
+        //throw new CustomException("修改的商品信息不存在!");
         //}
 
         //通过形参中的model将model数据传到页面
@@ -122,7 +119,9 @@ public class ItemsController {
     //@PathVariable中名称要和占位符一致，形参名无需和其一致
     //如果占位符中的名称和形参名一致，在@PathVariable可以不指定名称
     @RequestMapping("/itemsView/{id}")
-    public @ResponseBody ItemsCustom itemsView(@PathVariable("id") Integer items_id)throws Exception{
+    public
+    @ResponseBody
+    ItemsCustom itemsView(@PathVariable("id") Integer items_id) throws Exception {
 
         //调用service查询商品信息
         ItemsCustom itemsCustom = itemsService.findItemsById(items_id);
@@ -130,8 +129,6 @@ public class ItemsController {
         return itemsCustom;
 
     }
-
-
 
     // 商品信息修改提交
     // 在需要校验的pojo前边添加@Validated，在需要校验的pojo后边添加BindingResult
@@ -144,17 +141,17 @@ public class ItemsController {
             HttpServletRequest request,
             Integer id,
             @ModelAttribute("items")
-            @Validated(value = ValidGroup1.class)ItemsCustom itemsCustom,
+            @Validated(value = ValidGroup1.class) ItemsCustom itemsCustom,
             BindingResult bindingResult,
             MultipartFile items_pic
-    )throws Exception {
+    ) throws Exception {
 
         //获取校验错误信息
-        if(bindingResult.hasErrors()){
+        if (bindingResult.hasErrors()) {
             // 输出错误信息
             List<ObjectError> allErrors = bindingResult.getAllErrors();
 
-            for (ObjectError objectError :allErrors){
+            for (ObjectError objectError : allErrors) {
                 // 输出错误信息
                 System.out.println(objectError.getDefaultMessage());
             }
@@ -171,16 +168,15 @@ public class ItemsController {
         //原始名称
         String originalFilename = items_pic.getOriginalFilename();
         //上传图片
-        if(items_pic!=null && originalFilename!=null && originalFilename.length()>0){
+        if (items_pic != null && originalFilename != null && originalFilename.length() > 0) {
 
             //存储图片的物理路径
             String pic_path = "D:\\tmp\\";
 
-
             //新的图片名称
             String newFileName = UUID.randomUUID() + originalFilename.substring(originalFilename.lastIndexOf("."));
             //新图片
-            File newFile = new File(pic_path+newFileName);
+            File newFile = new File(pic_path + newFileName);
 
             //将内存中的数据写入磁盘
             items_pic.transferTo(newFile);
@@ -200,7 +196,6 @@ public class ItemsController {
 
     }
 
-
     //商品信息修改提交
     //@RequestMapping("/editItemsSubmit")
     //public ModelAndView editItemsSubmit(HttpServletRequest request, Integer id, ItemsCustom itemsCustom)throws Exception {
@@ -215,8 +210,6 @@ public class ItemsController {
     //    return modelAndView;
     //}
 
-
-
     ////商品信息修改提交
     //@RequestMapping("/success")
     //public ModelAndView success(){
@@ -226,7 +219,6 @@ public class ItemsController {
     //    modelAndView.setViewName("success");
     //    return modelAndView;
     //}
-
 
     // 批量删除 商品信息
     @RequestMapping("/deleteItems")
@@ -240,10 +232,9 @@ public class ItemsController {
 
     }
 
-
     // 批量修改商品页面，将商品信息查询出来，在页面中可以编辑商品信息
     @RequestMapping("/editItemsQuery")
-    public ModelAndView editItemsQuery(HttpServletRequest request, ItemsQueryVo itemsQueryVo) throws Exception{
+    public ModelAndView editItemsQuery(HttpServletRequest request, ItemsQueryVo itemsQueryVo) throws Exception {
 
         //调用service查找数据库，查询商品列表
         List<ItemsCustom> itemsList = itemsService.findItemsList(itemsQueryVo);
@@ -251,7 +242,7 @@ public class ItemsController {
         //返回ModelAndView
         ModelAndView modelAndView = new ModelAndView();
         //相当于request的setAttribute方法,在jsp页面中通过itemsList取数据
-        modelAndView.addObject("itemsList",itemsList);
+        modelAndView.addObject("itemsList", itemsList);
 
         modelAndView.setViewName("items/editItemsQuery");
 
@@ -265,6 +256,5 @@ public class ItemsController {
 
         return "success";
     }
-
 
 }

@@ -13,7 +13,7 @@ public class Orders {
     private Date createtime;
 
     private String note;
-    
+
     //用户信息
     private User user;
 
@@ -60,25 +60,24 @@ public class Orders {
         this.note = note == null ? null : note.trim();
     }
 
-	public User getUser() {
-		return user;
-	}
+    public User getUser() {
+        return user;
+    }
 
-	public void setUser(User user) {
-		this.user = user;
-	}
+    public void setUser(User user) {
+        this.user = user;
+    }
 
-	public List<Orderdetail> getOrderdetails() {
-		return orderdetails;
-	}
+    public List<Orderdetail> getOrderdetails() {
+        return orderdetails;
+    }
 
-	public void setOrderdetails(List<Orderdetail> orderdetails) {
-		this.orderdetails = orderdetails;
-	}
+    public void setOrderdetails(List<Orderdetail> orderdetails) {
+        this.orderdetails = orderdetails;
+    }
 
     //public void print(){
     //    System.out.println("----test-print-----"+user+"   user==null: "+(user==null));
     //}
-    
-    
+
 }

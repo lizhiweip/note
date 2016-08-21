@@ -11,8 +11,7 @@
     <!-- 在映射文件中配置很多sql语句 -->
 
     <select id="findUserById" parameterType="int" resultType="user">
-        SELECT * FROM  user  WHERE id=#{value}
+        SELECT * FROM user WHERE id=#{value}
     </select>
-
 
 </mapper>

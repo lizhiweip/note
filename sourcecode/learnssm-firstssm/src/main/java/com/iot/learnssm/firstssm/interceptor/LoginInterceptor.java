@@ -14,7 +14,6 @@ import javax.servlet.http.HttpSession;
 
 public class LoginInterceptor implements HandlerInterceptor {
 
-
     //进入 Handler方法之前执行
     //用于身份认证、身份授权
     //比如身份认证，如果认证通过表示当前用户没有登陆，需要此方法拦截不再向下执行
@@ -25,17 +24,17 @@ public class LoginInterceptor implements HandlerInterceptor {
         String url = request.getRequestURI();
         //判断url是否是公开 地址（实际使用时将公开 地址配置配置文件中）
         //这里公开地址是登陆提交的地址
-        if(url.indexOf("login.action")>=0){
+        if (url.indexOf("login.action") >= 0) {
             //如果进行登陆提交，放行
             return true;
         }
 
         //判断session
-        HttpSession session  = request.getSession();
+        HttpSession session = request.getSession();
         //从session中取出用户身份信息
         String username = (String) session.getAttribute("username");
 
-        if(username != null){
+        if (username != null) {
             //身份存在，放行
             return true;
         }

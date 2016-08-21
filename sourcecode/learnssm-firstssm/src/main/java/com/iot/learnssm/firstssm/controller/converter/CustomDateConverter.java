@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * Created by brian on 2016/3/5.
  */
-public class CustomDateConverter implements Converter<String,Date>{
+public class CustomDateConverter implements Converter<String, Date> {
     public Date convert(String s) {
         //实现 将日期串转成日期类型(格式是yyyy-MM-dd HH:mm:ss)
 

@@ -9,9 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Created by brian on 2016/3/7.
  */
-public class CustomExceptionResolver implements HandlerExceptionResolver{
+public class CustomExceptionResolver implements HandlerExceptionResolver {
     /**
-     *
      * @param request
      * @param response
      * @param handler
@@ -24,17 +23,17 @@ public class CustomExceptionResolver implements HandlerExceptionResolver{
         //如果该 异常类型是系统 自定义的异常，直接取出异常信息，在错误页面展示
         //String message = null;
         //if(ex instanceof CustomException){
-			//message = ((CustomException)ex).getMessage();
+        //message = ((CustomException)ex).getMessage();
         //}else{
-			////如果该 异常类型不是系统 自定义的异常，构造一个自定义的异常类型（信息为“未知错误”）
-			//message="未知错误";
+        ////如果该 异常类型不是系统 自定义的异常，构造一个自定义的异常类型（信息为“未知错误”）
+        //message="未知错误";
         //}
 
         //上边代码变为
         CustomException customException;
-        if(ex instanceof CustomException){
-            customException = (CustomException)ex;
-        }else{
+        if (ex instanceof CustomException) {
+            customException = (CustomException) ex;
+        } else {
             customException = new CustomException("未知错误");
         }
 
@@ -48,7 +47,6 @@ public class CustomExceptionResolver implements HandlerExceptionResolver{
 
         //指向错误页面
         modelAndView.setViewName("error");
-
 
         return modelAndView;
 

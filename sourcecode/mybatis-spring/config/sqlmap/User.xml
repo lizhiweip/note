@@ -18,8 +18,7 @@
      resultType：指定sql输出结果的映射的java对象类型，select指定resultType表示将单条记录映射成java对象
      -->
     <select id="findUserById" parameterType="int" resultType="com.iot.ssm.po.User">
-        SELECT * FROM  user  WHERE id=#{value}
+        SELECT * FROM user WHERE id=#{value}
     </select>
-
 
 </mapper>

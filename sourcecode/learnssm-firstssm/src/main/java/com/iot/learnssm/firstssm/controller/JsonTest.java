@@ -15,7 +15,9 @@ public class JsonTest {
     //@RequestBody将请求的商品信息的json串转成itemsCustom对象
     //@ResponseBody将itemsCustom转成json输出
     @RequestMapping("/requestJson")
-    public @ResponseBody ItemsCustom requestJson(@RequestBody ItemsCustom itemsCustom){
+    public
+    @ResponseBody
+    ItemsCustom requestJson(@RequestBody ItemsCustom itemsCustom) {
 
         //@ResponseBody将itemsCustom转成json输出
         return itemsCustom;
@@ -23,13 +25,12 @@ public class JsonTest {
 
     //请求key/value，输出json
     @RequestMapping("/responseJson")
-    public @ResponseBody ItemsCustom responseJson(ItemsCustom itemsCustom){
+    public
+    @ResponseBody
+    ItemsCustom responseJson(ItemsCustom itemsCustom) {
 
         //@ResponseBody将itemsCustom转成json输出
         return itemsCustom;
     }
-
-
-
 
 }

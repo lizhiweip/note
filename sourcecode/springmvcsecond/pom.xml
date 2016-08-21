@@ -16,13 +16,10 @@
             <version>4.2.4.RELEASE</version>
         </dependency>
 
-
     </dependencies>
 
     <build>
         <finalName>springmvc-2nd-1.0-SNAPSHOT</finalName>
     </build>
-
-
 
 </project>

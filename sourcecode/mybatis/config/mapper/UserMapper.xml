@@ -19,7 +19,7 @@
      resultType：指定sql输出结果的映射的java对象类型，select指定resultType表示将单条记录映射成java对象
      -->
     <select id="findUserById" parameterType="int" resultType="com.iot.mybatis.po.User">
-        SELECT * FROM  user  WHERE id=#{value}
+        SELECT * FROM user WHERE id=#{value}
     </select>
 
     <!-- 根据用户名称模糊查询用户信息，可能返回多条
@@ -31,7 +31,6 @@
     <select id="findUserByName" parameterType="java.lang.String" resultType="com.iot.mybatis.po.User">
         SELECT * FROM user WHERE username LIKE '%${value}%'
     </select>
-
 
     <!-- 添加用户
         parameterType：指定输入 参数类型是pojo（包括 用户信息）
@@ -48,7 +47,7 @@
          resultType：指定SELECT LAST_INSERT_ID()的结果类型
           -->
         <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
-          SELECT LAST_INSERT_ID()
+            SELECT LAST_INSERT_ID()
         </selectKey>
         INSERT INTO user (username,birthday,sex,address)values (#{username},#{birthday},#{sex},#{address})
         <!--

@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/2/21.
  */
-public class User implements Serializable{
+public class User implements Serializable {
     //属性名要和数据库表的字段对应
     private int id;
     private String username;// 用户姓名

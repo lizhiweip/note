@@ -8,29 +8,25 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class UserMapperTest {
 
-	private ApplicationContext applicationContext;
+    private ApplicationContext applicationContext;
 
-	//在setUp这个方法得到spring容器
-	@Before
-	public void setUp() throws Exception {
-		applicationContext = new ClassPathXmlApplicationContext("classpath:spring/applicationContext.xml");
-	}
+    //在setUp这个方法得到spring容器
+    @Before
+    public void setUp() throws Exception {
+        applicationContext = new ClassPathXmlApplicationContext("classpath:spring/applicationContext.xml");
+    }
 
+    @Test
+    public void testFindUserById() throws Exception {
 
+        UserMapper userMapper = (UserMapper) applicationContext.getBean("userMapper");
 
-	@Test
-	public void testFindUserById() throws Exception {
+        //调用userMapper的方法
 
+        User user = userMapper.findUserById(1);
 
-		UserMapper userMapper = (UserMapper)applicationContext.getBean("userMapper");
+        System.out.println(user);
 
-		//调用userMapper的方法
-
-		User user = userMapper.findUserById(1);
-
-		System.out.println(user);
-
-	}
-
+    }
 
 }

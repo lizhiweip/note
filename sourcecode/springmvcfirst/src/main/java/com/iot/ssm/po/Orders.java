@@ -13,10 +13,10 @@ public class Orders {
     private Date createtime;
 
     private String note;
-    
+
     //用户信息
     private User user;
-    
+
     //订单明细
     private List<Orderdetail> orderdetails;
 
@@ -60,28 +60,27 @@ public class Orders {
         this.note = note == null ? null : note.trim();
     }
 
-	public User getUser() {
-		return user;
-	}
+    public User getUser() {
+        return user;
+    }
 
-	public void setUser(User user) {
-		this.user = user;
-	}
+    public void setUser(User user) {
+        this.user = user;
+    }
 
-	public List<Orderdetail> getOrderdetails() {
-		return orderdetails;
-	}
+    public List<Orderdetail> getOrderdetails() {
+        return orderdetails;
+    }
 
-	public void setOrderdetails(List<Orderdetail> orderdetails) {
-		this.orderdetails = orderdetails;
-	}
+    public void setOrderdetails(List<Orderdetail> orderdetails) {
+        this.orderdetails = orderdetails;
+    }
 
-	@Override
-	public String toString() {
-		return "Orders [id=" + id + ", userId=" + userId + ", number=" + number
-				+ ", createtime=" + createtime + ", note=" + note + ", user="
-				+ user + ", orderdetails=" + orderdetails + "]";
-	}
-    
-    
+    @Override
+    public String toString() {
+        return "Orders [id=" + id + ", userId=" + userId + ", number=" + number
+                + ", createtime=" + createtime + ", note=" + note + ", user="
+                + user + ", orderdetails=" + orderdetails + "]";
+    }
+
 }

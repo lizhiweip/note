@@ -23,14 +23,13 @@ public class ItemsServiceImpl implements ItemsService {
     @Autowired
     private ItemsMapper itemsMapper;
 
-
     public List<ItemsCustom> findItemsList(ItemsQueryVo itemsQueryVo) throws Exception {
         return itemsMapperCustom.findItemsList(itemsQueryVo);
     }
 
     public ItemsCustom findItemsById(Integer id) throws Exception {
         Items items = itemsMapper.selectByPrimaryKey(id);
-        if(items==null){
+        if (items == null) {
             throw new CustomException("修改的商品信息不存在!");
         }
         //中间对商品信息进行业务处理
@@ -38,7 +37,7 @@ public class ItemsServiceImpl implements ItemsService {
         //返回ItemsCustom
         ItemsCustom itemsCustom = null;
         //将items的属性值拷贝到itemsCustom
-        if(items!=null){
+        if (items != null) {
             itemsCustom = new ItemsCustom();
             BeanUtils.copyProperties(items, itemsCustom);
         }

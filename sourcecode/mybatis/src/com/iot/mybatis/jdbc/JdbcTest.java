@@ -1,6 +1,7 @@
 package com.iot.mybatis.jdbc;
 
 //import java.sql.*;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -24,7 +25,7 @@ public class JdbcTest {
             Class.forName("com.mysql.jdbc.Driver");
 
             //通过驱动管理类获取数据库链接
-            connection =  DriverManager.getConnection("jdbc:mysql://120.25.162.238:3306/mybatis001?characterEncoding=utf-8", "root", "linaro");
+            connection = DriverManager.getConnection("jdbc:mysql://120.25.162.238:3306/mybatis001?characterEncoding=utf-8", "root", "linaro");
             //定义sql语句 ?表示占位符
             String sql = "select * from user where username = ?";
             //获取预处理statement
@@ -32,16 +33,16 @@ public class JdbcTest {
             //设置参数，第一个参数为sql语句中参数的序号（从1开始），第二个参数为设置的参数值
             preparedStatement.setString(1, "王五");
             //向数据库发出sql执行查询，查询出结果集
-            resultSet =  preparedStatement.executeQuery();
+            resultSet = preparedStatement.executeQuery();
             //遍历查询结果集
-            while(resultSet.next()){
-                System.out.println(resultSet.getString("id")+"  "+resultSet.getString("username"));
+            while (resultSet.next()) {
+                System.out.println(resultSet.getString("id") + "  " + resultSet.getString("username"));
             }
         } catch (Exception e) {
             e.printStackTrace();
-        }finally{
+        } finally {
             //释放资源
-            if(resultSet!=null){
+            if (resultSet != null) {
                 try {
                     resultSet.close();
                 } catch (SQLException e) {
@@ -49,7 +50,7 @@ public class JdbcTest {
                     e.printStackTrace();
                 }
             }
-            if(preparedStatement!=null){
+            if (preparedStatement != null) {
                 try {
                     preparedStatement.close();
                 } catch (SQLException e) {
@@ -57,7 +58,7 @@ public class JdbcTest {
                     e.printStackTrace();
                 }
             }
-            if(connection!=null){
+            if (connection != null) {
                 try {
                     connection.close();
                 } catch (SQLException e) {

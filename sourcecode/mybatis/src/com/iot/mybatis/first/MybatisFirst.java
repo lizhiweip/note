@@ -20,11 +20,11 @@ public class MybatisFirst {
     //根据id查询用户信息，得到一条记录结果
 
     @Test
-    public void findUserByIdTest() throws IOException{
+    public void findUserByIdTest() throws IOException {
         // mybatis配置文件
         String resource = "SqlMapConfig.xml";
         // 得到配置文件流
-        InputStream inputStream =  Resources.getResourceAsStream(resource);
+        InputStream inputStream = Resources.getResourceAsStream(resource);
         //创建会话工厂，传入mybatis配置文件的信息
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
@@ -65,7 +65,6 @@ public class MybatisFirst {
         sqlSession.close();
 
     }
-
 
     // 添加用户信息
     @Test
@@ -159,8 +158,5 @@ public class MybatisFirst {
         sqlSession.close();
 
     }
-
-
-
 
 }

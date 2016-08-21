@@ -9,21 +9,19 @@ import java.util.List;
 /**
  * Created by Brian on 2016/2/24.
  */
-public class UserDaoImpl implements UserDao{
+public class UserDaoImpl implements UserDao {
     // 需要向dao实现类中注入SqlSessionFactory
     // 这里通过构造方法注入
     private SqlSessionFactory sqlSessionFactory;
 
-    public UserDaoImpl(SqlSessionFactory sqlSessionFactory){
+    public UserDaoImpl(SqlSessionFactory sqlSessionFactory) {
         this.sqlSessionFactory = sqlSessionFactory;
     }
-
-
 
     @Override
     public User findUserById(int id) throws Exception {
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        User user = sqlSession.selectOne("test.findUserById",id);
+        User user = sqlSession.selectOne("test.findUserById", id);
         //释放资源
         sqlSession.close();
         return user;

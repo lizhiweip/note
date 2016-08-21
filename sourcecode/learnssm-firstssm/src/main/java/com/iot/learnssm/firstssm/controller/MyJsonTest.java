@@ -19,15 +19,16 @@ public class MyJsonTest {
     private ItemsService itemsService;
 
     @RequestMapping("/testJson")
-    public @ResponseBody
-    Object responseJson()throws Exception {
-        class ResponseBody{
-            String code="10000";
-            String message= "成功";
-            Map<String,Object>result = new HashMap<String, Object>();
+    public
+    @ResponseBody
+    Object responseJson() throws Exception {
+        class ResponseBody {
+            String code = "10000";
+            String message = "成功";
+            Map<String, Object> result = new HashMap<String, Object>();
 
-            public Map<String, Object> getResult(){
-                    return result;
+            public Map<String, Object> getResult() {
+                return result;
             }
 
             public void setResult(Map<String, Object> result) {
@@ -51,10 +52,9 @@ public class MyJsonTest {
             }
         }
 
-
         ResponseBody responseBody = new ResponseBody();
         ItemsCustom itemsCustom = itemsService.findItemsById(1);
-        responseBody.getResult().put("itemsCustom",itemsCustom);
+        responseBody.getResult().put("itemsCustom", itemsCustom);
         return responseBody;
 
     }
