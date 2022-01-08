@@ -91,8 +91,8 @@
 
 在IDE中添加 tomcat 容器:
 
-- ToolBar -> 运行按钮旁边的下拉 -> "Edit Configurations" -> "+" -> "Tomcat Server" 选 local,[如图所示](http://7xph6d.com1.z0.glb.clouddn.com/IDEA_web-%E6%B7%BB%E5%8A%A0tomcat-01.png)
-- 如果是第一次添加,还需要配置 tomcat 的路径,[如图所示](http://7xph6d.com1.z0.glb.clouddn.com/IDEA_web-%E6%B7%BB%E5%8A%A0tomcat-02.png)
+- ToolBar -> 运行按钮旁边的下拉 -> "Edit Configurations" -> "+" -> "Tomcat Server" 选 local,[如图所示](/blogs/img/web-%E6%B7%BB%E5%8A%A0tomcat-01.png)
+- 如果是第一次添加,还需要配置 tomcat 的路径,[如图所示](/blogs/img/IDEA_web-%E6%B7%BB%E5%8A%A0tomcat-02.png)
 
 
 

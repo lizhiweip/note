@@ -24,7 +24,7 @@
 ## 二级缓存原理
 
 
-![二级缓存原理](http://7xph6d.com1.z0.glb.clouddn.com/mybatis_%E4%BA%8C%E7%BA%A7%E7%BC%93%E5%AD%98%E5%8E%9F%E7%90%86%E5%9B%BE.png)
+![二级缓存原理](/blogs/img/mybatis_%E4%BA%8C%E7%BA%A7%E7%BC%93%E5%AD%98%E5%8E%9F%E7%90%86%E5%9B%BE.png)
 
 首先开启mybatis的二级缓存.
 
