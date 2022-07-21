@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div{
+            width: 200px;
+            height:200px;
+            background-color: pink;
+        }
+        .current{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div></div> 
+   <script>
+      
+      //等页面执行完再去执行js代码
+      $(document).ready(function(){
+        $('div').hide();
+      })
+
+      //修改css
+      $('div').css("width","300px")  //属性必须加引号
+      //用类修改样式
+       $('div').addClass("current");
+
+
+      // $(this).css({"color":"write","font-size":"20px"});
+   </script> 
+</body>
+</html>

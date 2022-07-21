@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+    </ul>
+    <script>
+           //用法                    语法
+           // $('ul li:first')         :first  获取第一个li元素
+           // $('ul li:last')           :last   获取最后一个li元素
+           // $("ul li:eq(2)")          :eq(index) 选择索引号为2 的元li素
+           // $("ul li:odd")            :odd    选择索引号为奇数的li元素  
+           // $("ul li:even")           :even   选择索引号为偶数的li元素
+           
+           
+           //筛选方法                 说明    
+           //$("li").parent();        查找父级
+           //$("ul").children("li");   相当于$("ul>li"),最近一级（亲儿子）
+           //$("ul").find("li");       相当于$("ul li"),后代选择器
+           //$(".first").siblings("li"); 查找兄弟节点 不包括自己本身
+           //$(".first").nextAll();     查找元素之后所有同辈元素
+            //$(".first").prevAll();     查找元素之前所有同辈元素
+            //$("div")hasClass("protected") 查找某个元素是否含有某个特定的类
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击</button>
+    <p>123</p>
+    <div class="inner"></div>
+    <div class="create"></div>
+    <script>
+        //3种创建元素方式区别
+        //1.document.write() 创建元素，如果页面文档流加载完毕，再调用这句话会导致页面重绘
+        //2，innerHTML       创建多个元素时效率更高（采取数组形式，不要拼接字符串）
+        var inner = document.querySelector('.inner');
+        inner.innerHTML='<a herf="#">百度</a>'
+        //3,document.createElement('a') 创建元素
+        var create =document.querySelector('.create');
+        var a= document.createElement('a');
+        create.appendChild(a); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+     </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div></div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+    </ul>
+    <ol>
+        <li>1</li>
+        <li>2 </li>
+    </ol>
+    <script>
+     $(function(){
+        //1,单个事件注册
+            $('div').click(function(){
+                $(this).css("background","pink");
+            });
+            $('div').mousemove(function(){
+                $(this).css("background","skyblue");
+            });
+            
+        //2，事件处理on
+       // $("div").on({ 
+       //   mouseenter:function(){
+       //       $(this).css("background","skyblue");
+       //   },
+       //  click:function(){
+       //     $(this).css("background","pink");
+       // }
+       //});
+
+
+       //on可以实现事件委托（委派）
+          $("ul").on("click","li",function(){
+            alert(11);
+          });
+       //on可以动态创建元素绑定事件
+       $("ol").on("click","li",function(){
+        alert(11);
+       })
+       var li = $("<li>我是后俩创建的</li>")
+       $("ol").append(li);   
+
+     })
+    </script>
+</body>
+</html>

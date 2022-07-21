@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div>惊喜不</div>
+    <div>惊喜不</div>
+    <div>惊喜不</div>
+    <div>惊喜不</div>
+    <ul>
+        <li>相同的操作</li>
+        <li>相同的操作</li>
+        <li>相同的操作</li>
+    </ul>
+    <script>
+        //1,获取4个div元素
+          $("div");
+        //2，给4个div设置背景颜色为粉色 jquery对象不能使用style修改样式 使用$("div").css('属性','值')
+          $("div").css("background","pink"); //内部会遍历给每个元素添加css样式
+    </script>
+</body>
+</html>
