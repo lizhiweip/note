@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace=绑定一个对应的Dao/Mapper接口-->
+<mapper namespace="com.li.dao.UserMapper">
+    <!--select查询语句，id就是执行方法的名字-->
+   <resultMap id="UserMap" type="User"></resultMap>
+
+    <select id="getUserLike" resultType="com.li.pojo.User" >
+        select * from tb_user where name like #{value}
+    </select>
+
+    <select id="getUserList" resultType="com.li.pojo.User">
+        select * from tb_user;
+    </select>
+
+    <select id="getUserById" parameterType="int" resultType="com.li.pojo.User">
+        select * from tb_user where id=#{id}
+    </select>
+
+    <insert id="addUser" parameterType="com.li.pojo.User" >
+        insert into tb_user (id,name,pwd) values(#{id},#{name},#{pwd})
+    </insert>
+
+    <insert id="addUser2" parameterType="com.li.pojo.User" >
+        insert into tb_user (id,name,pwd) values(#{userid},#{userName},#{upwd})
+    </insert>
+
+    <update id="updateUser" parameterType="com.li.pojo.User">
+        update tb_user set name=#{name},pwd=#{pwd}  where id =#{id}
+    </update>
+
+    <delete id="deleteUser" parameterType="int" >
+        delete from tb_user
+    </delete>
+
+    <select id="getUserByLimit" parameterType="map" resultType="com.li.pojo.User" resultMap="UserMap">
+        select * from tb_user limit #{startIndex},#{pageSize}
+    </select>
+
+    <select id="getUserByRowBounds" resultMap="UserMap">
+        select * from tb_user
+    </select>
+</mapper>

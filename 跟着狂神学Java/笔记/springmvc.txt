@@ -1,0 +1,102 @@
+遇到404排查步骤：
+1,查看控制台输出，是不是少了什么jar包
+2，如果jar包存在，显示无法输出，就在项目结构中添加lib依赖！
+3，重启Tomcat即可解决问题
+
+使用springMVC必须配置三大件：
+  处理器映射器，处理器适配器，视图解析器
+通常，我们只需要手动配置视图解析器，而处理器映射器和处理器适配器只需要开启注解驱动即可，
+而省去了大段的xml配置
+
+@Component           组件
+@Service                   service
+@Controller               controller
+@Respository            dao
+
+我们的两个请求可以指向同一个视图，但页面显示的结果是不一样的，
+从这里可以看出视图时被复用的，而控制器和视图之间是弱耦合关系
+
+
+Restful风格
+资源：互联网所有事务都可以被抽象为资源
+资源操作：使用POST,DELETE,PUT,GET使用不同方法对资源进行操作
+传统方式操作资源：使用不同参数实现不同效果方法单一，post和get
+http://127.0.0.1/item/queryItem.action?id=1 查询 GET
+http://127.0.0.1/item/saveItem.action  新增POST
+http://127.0.0.1/item/updateItem.action 更新POST
+http://127.0.0.1/item/delet.action?id=1 删除GET或POST
+Restful风格操作资源：可以使用不同请求方式实现不同效果，如下：请求地址一样，但功能可以不同
+http://127.0.0.1/item/1 查询 GET
+http://127.0.0.1/item     新增POST
+http://127.0.0.1/item     更新PUT
+http://127.0.0.1/item/1  删除DELETE
+
+@RequestMapping("/add/{a}/{b}")
+    public String test1(@PathVariable int a, @PathVariable int b, Model model){
+        int res=a+b;
+        model.addAttribute("msg","结果为"+res);
+        return "test";
+    }
+在参数上注解@PathVariable 在路径上写/{a}
+好处：
+   使路径变得更加简洁；
+   获得参数更加方便，框架会自动进行类型转换
+
+跳转和重定向
+  页面：{视图解析器前缀}+viewName+{视图解析器后缀}
+通过设置ServletAPI,不需要视图解析器，
+ 1，通过HttpServletResponse进行输出
+ 2，通过HttpServletResponse进行重定向
+ 3，通过HttpServletResponse实现转发
+
+通过springmvc 无需视图解析器
+@Controller
+public class ResultSpringMVC {
+    @RequestMapping("/rsm/t1")
+    public String test1(){
+        //转发
+        return "/index.jsp";
+    }
+    
+    @RequestMapping("/rsm/t2")
+    public String test2(){
+        //转发2
+        return "forward:/index.jsp";
+    }
+
+    @RequestMapping("/rsm/t3")
+    public String test3(){
+        //重定向
+        return "redirect:/index.jsp";
+    }
+}
+
+
+接收请求参数及数据回显
+LinkedHashMap
+
+ModelMap:继承了LinkedHashMap,所以它拥有LinkedHashMap的全部功能！
+Model:精简版 （大部分情况下，我们都直接使用Model）
+
+前后端分离时代：
+       后端部署后端，提供接口，提供数据：
+
+                         json  
+  
+       前端独立部署，负责渲染后端的数据：
+
+json是一种轻量级的数据交换格式，目前使用的特别广泛
+采用完全独立编程语言的文本格式来储存和表示数据
+JavaScript支持的类型都可以通过JSON来表示，例如字符串，数字，对象，数组等
+要求和格式：
+1.对象表示为键值对，数据由逗号分隔
+2.花括号保存对象
+3.方括号保存数组
+json键值对是用来保存javascript对象的一种方式，
+  键名写在前面并用双引号“”包裹，使用冒号：分割然后紧接着值：
+{“name": "lizhiwei"}
+{"age": "3"}
+{”sex":"男"}
+
+
+
