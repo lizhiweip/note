@@ -1,0 +1,6 @@
+npm: node package manager ,node包管理器，类似于maven
+  作用：
+      1，快速构建nodejs工程
+       -npm init
+         -得到package.json
+      2，快速安装和依赖第三方模块，比如：npm install mysql redis

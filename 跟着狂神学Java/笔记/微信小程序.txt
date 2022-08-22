@@ -1,0 +1,15 @@
+<text>相当于<span>，是行内元素
+<view>相当于<div>,不是行内元素
+
+字符串和花括号之间不要有空格
+
+1，数据绑定
+   1，在.json文件中找到data:{}
+        <view>{{msg}}</view>
+        page({
+             data:{
+              msg: "hello world"
+             }   
+        });
+   2,复选框
+    <checkbox checked></checkbox>

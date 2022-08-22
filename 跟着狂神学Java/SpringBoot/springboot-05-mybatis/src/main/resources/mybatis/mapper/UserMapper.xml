@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.li.mapper.UserMapper">
+
+    <select id="queryUserList" resultType="User">
+        select * from tb_user
+    </select>
+
+    <select id="QueryUserById" resultType="User">
+        select * from tb_user where id=#{id}
+    </select>
+
+    <insert id="addUser" parameterType="User">
+        insert into tb_user (id,name,pwd) values (#{id},#{name},#{pwd})
+    </insert>
+
+    <update id="updateUser" parameterType="User">
+        update tb_user set name=#{name},pwd=#{pwd} where id=#{id}
+    </update>
+
+    <delete id="deleteUser" parameterType="int">
+        delete from tb_user where id=#{id}
+    </delete>
+
+
+
+</mapper>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!--View层 模板-->
+<div id="app">
+
+    <li v-for="item in items">
+        {{item.message}}
+    </li>
+
+</div>
+
+<!--1,导入Vue.js-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        // Model层 数据
+        data:{
+        items:[
+            {message:'荔枝味'},
+            {message:'好帅'}
+        ]
+        }
+    });
+</script>
+</body>
+</html>

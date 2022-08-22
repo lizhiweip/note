@@ -9,13 +9,21 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>springmvc-01</module>
-        <module>springmvc-02-helllomvc</module>
+        <module>springmvc-01-servlet</module>
+        <module>springmvc-02-hellomvc</module>
+        <module>springmvc-03-annotation</module>
+        <module>springmvc-04-controller</module>
+        <module>springmvc-05-json</module>
+        <module>springmvc-06-ajax</module>
+        <module>springmvc-07-intercepter</module>
+        <module>springmvc-08-file</module>
     </modules>
+
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -34,10 +42,39 @@
             <version>2.5</version>
         </dependency>
         <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.2</version>
+        </dependency>
+        <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
+        </dependency>
     </dependencies>
-
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+    </build>
 </project>

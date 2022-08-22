@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+     let info = {
+        title:"li",
+        link:"http://baidu.com",
+        go:function(){
+            console.log("我骑车去公司");
+        }
+     };
+
+     //es6简写
+     //因为对象是以Key:value存在
+     //1,如果key和value是一个函数，可以只定义一次
+     //2,如果value是一个函数，可以把`function`去掉只剩下（）即可
+     var titel = "li";
+     var link = "http://baidu.com";
+     let info2 = {
+        titel,
+        link,
+        go(){
+            console.log("我骑车去公司");
+        }
+     };
+     console.log(info2);
+     console.log(info2.titel);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+     //let和const解决
+     //1,var的变量穿透问题，
+     for(var i=0;i++;i<5){
+        console.log(i);
+     }
+     console.log(i);
+     //var i 会穿透除去，let就不会
+     //2,常量修改问题
+      var PI=Math.PI;
+      PI= 100;
+      console.log(PI);
+     //var 常量可以修改，const 不能修改
+
+    //在实际开发中，如果是小程序，uniapp或者一些脚手架中，可以大胆使用let和const
+    //但是如果是web开发建议使用var因为低版本浏览器不支持let和const
+
+
+
+    </script>
+
+
+</body>
+</html>

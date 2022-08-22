@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<script>
+    //字符串会牵涉到动态部分
+    var person = {
+        name:"荔枝味",
+        address:"江西",
+        link:"http://baidu.com"
+    }
+    let address = "我是"+person.name+"在"+person.address;
+    console.log(address);
+
+   //es6的模板字符串语法
+   let address2 = `我是${person.name}在${person.address}`;
+   console.log(address2);
+
+
+
+</script>
+
+</body>
+</html>

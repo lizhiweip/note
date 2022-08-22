@@ -71,6 +71,9 @@ public class ResultSpringMVC {
     }
 }
 
+@RestController是@Controller和@ResponseBody的结合体，两个标注合并起来的作用。
+@Controller类中的方法可以直接通过返回String跳转到jsp、ftl、html等模版页面。在方法上加@ResponseBody注解，也可以返回实体对象。
+@RestController类中的所有方法只能返回String、Object、Json等实体对象，不能跳转到模版页面。
 
 接收请求参数及数据回显
 LinkedHashMap
@@ -98,5 +101,24 @@ json键值对是用来保存javascript对象的一种方式，
 {"age": "3"}
 {”sex":"男"}
 
+Ajax技术
+异步无刷新请求
+jQuery是一个库，jQuery.ajax()的部分参数：
+                       url:请求地址
+                       type:请求方式，GET,POST
+                       data:要发送的数据
+                       success:成功之后执行的回调函数
+                        error:失败后的回调函数
+
+HTML+CSS+js(超级熟练)
+js:函数:闭包，
+   DOM(id,name,tag,creat,remove)，
+   BOM(window事件，document)
+ES6:import require
 
 
+拦截器
+拦截器只会拦截访问的控制器方法，如果访问的是jsp/html/css/image/js是不会拦截的
+写一个类实现HandlerInterceptor接口
+
+在WEB-INF下的所有页面或者资源只能通过controller,或者servlet进行访问

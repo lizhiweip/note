@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //java--后台
+        //数据格式：var userPages = {pages:10,user:[{},{}],pageNo:1,pageSize:100,total:100};
+        //异步请求
+        //$.post("/user/search/",function(){
+            var userPages = {pages:10,user:[{},{}],pageNo:1,pageSize:100,total:100};
+            var {users,...userPage2} = userPages; 
+        //})
+    </script>
+</body>
+</html>

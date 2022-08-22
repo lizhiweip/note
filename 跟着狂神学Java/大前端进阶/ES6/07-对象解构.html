@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+  //对象以key:value存在，获取对象的属性和方法的方式有两种
+  //1，通过.
+  //2,通过[]
+
+    var titel = "li";
+     var link = "http://baidu.com";
+     let info2 = {
+        titel,
+        link,
+        go(){
+            console.log("我骑车去公司");
+        }
+     };
+     //1,通过.
+     console.log(info2);
+     console.log(info2.titel);
+     info2.go();
+     //2.通过[]
+     console.log(info2);
+     console.log(info2["titel"]);
+     console.log(info2["link"]);
+     info2["go"]();
+
+     //es6对象结构--其实就是快速获取属性和方法的一种形式
+     var {titel,link,go} = info2;
+     console.log(title,link);
+     go();
+     //还原代码
+     //var title = info2.titel;
+     //var link = info2.link;
+</script>
+
+</body>
+</html>

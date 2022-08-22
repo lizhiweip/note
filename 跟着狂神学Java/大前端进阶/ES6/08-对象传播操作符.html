@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+ <script>
+
+//对象传播操作符
+var person = {
+    name:"荔枝味",
+    address:"jiangxi",
+    link:"http://baidu.com",
+    phone:1234567,
+    go(){
+        console.log("傻逼");
+    }
+};
+//解构出来
+var {name,address,...person2} = person;
+console.log(name);
+console.log(address);
+console.log(person2);
+//person2中有link,phone,go(除了前面的name，address都有)
+
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+javase: OOP
+mysql: 持久化
+html+css+js+jquery+框架： 视图，框架不熟练，css不好
+javaweb: 独立开发MVC三层架构的网站：原始
+ssm: 框架：简化了我们的开发流程，配置也开始较为复杂；-war包：tomcat运行
+spring再简化：SpringBoot：jar包，内嵌tomcat；微服务架构
+服务越来越多：springcloud；
+
+约定大于配置：按照他的规则来
+ maven，spring，springmvc，springboot......
+程序=数据结构+算法  程序猿
+程序=面向对象+框架  码农
+
+架构
+mvc三层架构 MVVM 微服务架构
+
+第一个springboot
+jdk1.8
+maven3.6.1
+springboot:最新版
+IDEA
+官方：提供了一个快速生成的网站，IDEA集成了这个网站https://start.spring.io/
+
+application.properties
+#springboot的配置文件
+#更改项目端口号
+server.port=8081
+更改banner
+ .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/

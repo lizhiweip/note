@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+         <p>账号:<input type="text" id="account"></p>
+         <p>密码:<input type="text" id="password"></p>
+         <p><input type="button" value="登录" id="loginbtn"></p>
+    </form>
+
+<script>
+document.getElementById("loginbtn").onclick = function(){};
+$("#loginbtn").on("click",function(){
+    var account = $("#account").val();
+    var password = $("#password").val();
+    //执行异步请求
+    //对象简写
+    var params = {account,password};
+    $.ajax({
+        type:"post",
+        url:"xxx",
+        data:{account:account,password:password},
+        //data:params
+        //success(){}
+        success:function(){}
+    })
+})
+
+var vue 
+
+</script>
+
+</body>
+</html>
